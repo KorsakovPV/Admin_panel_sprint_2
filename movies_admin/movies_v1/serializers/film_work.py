@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from movies_v1.models import FilmWork
+from movies_admin.movies_v1.models import FilmWork
 
 
 class FilmWorkSerializer(serializers.ModelSerializer):
