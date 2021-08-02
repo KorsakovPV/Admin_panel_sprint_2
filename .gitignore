@@ -50,3 +50,7 @@ ENV/
 
 # auto generated docs
 doc.html
+/static_volume/
+/static/
+/postgres_data/
+/movies_admin/config/static/

@@ -14,16 +14,16 @@ from movies_v1.models import User, Genre, FilmWork, Person, FilmWorkGenre, FilmW
 class Command(BaseCommand):
     help = 'Generating data.'
 
-    USER = 100
-    GENRE = 10000
-    PERSON = 100000
-    FILMWORK_FILM = 1000000
-    FILMWORK_SERIES = 200000
+    USER = 10
+    GENRE = 100
+    PERSON = 1000
+    FILMWORK_FILM = 10000
+    FILMWORK_SERIES = 2000
     FILMWORK_MIN_GENRE = 0
     FILMWORK_MAX_GENRE = 5
     FILMWORK_MIN_PERSONS = 0
     FILMWORK_MAX_PERSONS = 5
-    FILMWORK_GENRES_PERSONS = 7200000
+    FILMWORK_GENRES_PERSONS = 72000
     PADGE = 10000
 
     def handle(self, *args, **options):
@@ -39,15 +39,12 @@ class Command(BaseCommand):
         FilmWork.objects.all().delete()
 
         self.generating_users()
-        logging.info('User=', User.objects.all().count())
 
         self.generating_genres()
         self.all_genre = Genre.objects.all()
-        logging.info('Genre=', len(self.all_genre))
 
         self.generating_persons()
         self.all_person = Person.objects.all()
-        logging.info('Person=', len(self.all_person))
 
         self.generating_film(type='series', counter=self.FILMWORK_SERIES)
 
