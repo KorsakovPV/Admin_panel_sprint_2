@@ -1,7 +1,6 @@
 from django_filters import rest_framework as filters, DateTimeFromToRangeFilter
 
-# from movies_v1.models import FilmWork
-from movies_admin.movies_v1.models import FilmWork
+from movies_v1.models import FilmWork
 
 
 class FilmWorkFilter(filters.FilterSet):
